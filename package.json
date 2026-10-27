@@ -1,0 +1,17 @@
+{
+  "name": "skills-swap-unit9",
+  "version": "1.0.0",
+  "description": "Skill Swap full-stack app with frontend, Express API, SQLite database, and tests.",
+  "main": "server.js",
+  "scripts": {
+    "setup": "node scripts/setupDb.js",
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
+}
