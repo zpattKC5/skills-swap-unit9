@@ -1,131 +1,61 @@
-* { box-sizing: border-box; }
+# Skill Swap Frontend
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  color: #1f2937;
-}
+This repository contains the frontend for the Skill Swap app, connected to the provided backend API repository.
 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #1f2937;
-  color: white;
-}
+## Backend repo
 
-.controls {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+The backend used for this assignment is:
 
-.layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 400px) minmax(300px, 1fr);
-  gap: 1.5rem;
-  max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
+- https://github.com/RizeComputerScience/COMPSIX-skill-swap-backend
 
-.panel {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-  padding: 1.5rem;
-}
+## Setup
 
-h1, h2, h3 {
-  margin-top: 0;
-}
+1. Start the backend in a separate terminal:
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+```bash
+git clone https://github.com/RizeComputerScience/COMPSIX-skill-swap-backend.git
+cd COMPSIX-skill-swap-backend
+npm install
+cp .env.example .env
+npm run setup
+npm start
+```
 
-label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-weight: 600;
-}
+2. In this frontend repo, install dependencies:
 
-input, select, textarea, button {
-  padding: 0.7rem 0.8rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 1rem;
-}
+```bash
+npm install
+```
 
-button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-}
+3. Start the frontend server:
 
-button:hover {
-  background: #1d4ed8;
-}
+```bash
+npm start
+```
 
-.skill-list {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+4. Open the app in a browser:
 
-.skill-item {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  padding: 1rem;
-  background: #f9fafb;
-}
+```text
+http://localhost:3001
+```
 
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-}
+The frontend calls the backend at:
 
-.price {
-  background: #dbeafe;
-  color: #1d4ed8;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  font-weight: 700;
-}
+```text
+http://localhost:3000/api/skills
+```
 
-.category {
-  color: #2563eb;
-  font-weight: 600;
-}
+## Features
 
-#summary {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-weight: 600;
-}
+- Loads skills from the API
+- Creates skill entries in the database
+- Filters skills by category
+- Calculates total cost of all visible skills
+- Matches skills to a user preference profile
+- Includes unit tests for the core utility functions
 
-@media (max-width: 760px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
+## Tests
 
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-}
+```bash
+npm test
+```
