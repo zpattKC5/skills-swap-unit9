@@ -6,8 +6,9 @@ async function fetchSkills() {
     if (!response.ok) {
       throw new Error('Failed to fetch skills');
     }
+
     const data = await response.json();
-    return data;
+    return Array.isArray(data) ? data : [];
   } catch (error) {
     console.error('Error fetching skills:', error);
     throw error;

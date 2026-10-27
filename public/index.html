@@ -26,7 +26,7 @@
     <main class="layout">
       <section class="panel">
         <h2>Add a skill</h2>
-        <form id="skillForm">
+        <form id="skillForm" novalidate>
           <label>
             Title
             <input type="text" name="title" placeholder="e.g. Python tutoring" required />
@@ -48,13 +48,19 @@
             Description
             <textarea name="description" rows="4" placeholder="Describe the skill"></textarea>
           </label>
+          <label>
+            Provider (optional)
+            <input type="text" name="provider" placeholder="e.g. Sarah Chen" />
+          </label>
           <button type="submit">Create Skill</button>
+          <div id="formStatus" class="status" aria-live="polite"></div>
         </form>
       </section>
 
       <section class="panel">
         <h2>Available skills</h2>
         <div id="summary"></div>
+        <div id="apiStatus" class="status" aria-live="polite"></div>
         <ul id="skillList" class="skill-list"></ul>
       </section>
     </main>
