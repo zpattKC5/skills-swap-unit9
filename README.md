@@ -1,69 +1,33 @@
-# Skill Swap Frontend
+# Skill Swap - Unit 8
 
-This repository contains the frontend for the Skill Swap app and connects to the provided backend API repository.
-
-## Backend repo
-
-The backend used for this assignment is:
-
-- https://github.com/RizeComputerScience/COMPSIX-skill-swap-backend
-
-## Setup
-
-1. Start the backend in a separate terminal:
-
-```bash
-git clone https://github.com/RizeComputerScience/COMPSIX-skill-swap-backend.git
-cd COMPSIX-skill-swap-backend
-npm install
-cp .env.example .env
-npm run setup
-npm start
-```
-
-2. In this frontend repo, install dependencies:
-
-```bash
-npm install
-```
-
-3. Start the frontend app:
-
-```bash
-npm start
-```
-
-4. Open the app in a browser:
-
-```text
-http://localhost:3001
-```
-
-The frontend calls the backend at:
-
-```text
-http://localhost:3000/api/skills
-```
+This project implements the Skill Swap filtering, cost calculation, and match logic using test-driven development.
 
 ## Features
 
-- Loads skills from the API on page load
-- Persists newly created skills to the database
-- Filters skills by category
-- Calculates the total cost of visible skills
-- Matches available skills to a user's category and keyword preferences
-- Displays loading and error states for a more polished user experience
-- Includes unit tests for the required utility functions
+- Filter skills by category
+- Calculate total project cost based on hourly rate and hours
+- Match skills to a user based on category and max price
+- UI integration for all three functions
 
-## Tests
+## Setup
 
 ```bash
+npm install
 npm test
 ```
 
-## Notes for grading
+## Run the app locally
 
-- No hardcoded skill arrays are used in the main app flow
-- Data is retrieved from the backend database through the API
-- New skills are saved and reloaded immediately for persistence
-- Core utility functions are covered by automated tests
+```bash
+python -m http.server 8000
+```
+
+Then open `http://localhost:8000` in your browser.
+
+## Files
+
+- `skillswap-functions.js` - exported logic functions
+- `__tests__/skillswap.test.js` - Jest tests
+- `index.html` - UI for filters, cost calculator, and match results
+- `style.css` - page styling
+- `script.js` - DOM event handling and rendering
